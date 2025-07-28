@@ -6,8 +6,8 @@ VAR
 
 	fbTestAlarm1: fbalarm;
 
-	bTes1: BOOL;
-	bTest11: BOOL;
+        bTestSelectWarning: BOOL;
+        bTestAlarmCondition: BOOL;
 	bTestError1: BOOL;
 	bTestWarning1: BOOL;
 END_VAR
@@ -26,10 +26,10 @@ END_VAR
 
 // Alarm
 	fbTestAlarm1(
-	bSelectWarning:= bTes1, 
+        bSelectWarning:= bTestSelectWarning,
 	tDelayTime:= T#1S, 
 	bCommand:= TRUE, 
-	bAlarmCondition:= bTest11, 
+        bAlarmCondition:= bTestAlarmCondition,
 	iAlarmCode:= 1, 
 	iPriority:= 1, 
 	sAlarmMessage:= 'hello', 
