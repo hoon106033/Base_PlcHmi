@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL_HMI" Id="{63f0d02c-1b01-4db9-be78-8ef1bee4583f}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	iSelectProductNo	: UINT; // Select Product No.
+	bSaveProductData	: BOOL;
+	bDelectProductData	: BOOL;
+	iSelectRecipeNo		: UINT;
+	bSaveRecipeData		: BOOL;
+	bDelectRecipeData	: BOOL;
+	bRemoveProductData	: BOOL;
+	sCurrentTime		: STRING;
+	
+// Button
+	bBtAutoMode			: BOOL;
+	bBtStart			: BOOL;
+	bBtStop				: BOOL;
+	bBtHome				: BOOL;
+	bBtDoorLock			: BOOL;
+	bBtDoorUnlock		: BOOL;
+	bBtAlarmReset		: BOOL;
+
+// Lamp
+	bLpBlink			: BOOL;
+	bLpHome				: BOOL;
+	bLpAlarmReset		: BOOL;
+	bLpAutoMode			: BOOL;
+	bLpStart			: BOOL;
+	
+// Index
+	iTextIndex			: INT;	// By 'TextList' 0= Manual, 1= Auto
+	iMainFrame			: INT; // 0= Main, 1= Manual, 2= Setting, 3= Model, 4= Data, 5= Alarm
+
+// Frame Number
+
+    bMainScreen			: BOOL;
+    bManualScreen		: BOOL;
+	bSettingScreen		: BOOL;
+	bModelScreen		: BOOL;
+	bDataScreen			: BOOL;
+	bAlarmScreen		: BOOL;
+	
+// Message Box
+	
+	sCurrentTitle		: STRING;
+	sCurrnetMessage		: STRING;
+	bCallMessageBox		: BOOL;
+
+
+// Test Bt
+	bTest				: BOOL;
+END_VAR
+
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="DataShift" Id="{562dac83-2e05-4857-b372-a2a336e400f8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM DataShift
+VAR
+	bTestBitStart		:BOOL;
+	bTestBitEnd			:BOOL;	
+	i					:INT; //roop index
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// Calculate process time
+	GVL_Status.fbLocalTime(bEnable := TRUE);	// Currnet Time
+	IF bTestBitStart AND GVL_Status.fbLocalTime.bValid THEN
+		astProductData[1].dtStartTime := SYSTEMTIME_TO_DT(GVL_Status.fbLocalTime.systemTime);
+	END_IF
+	IF bTestBitEnd AND GVL_Status.fbLocalTime.bValid THEN
+		astProductData[1].dtEndTime := SYSTEMTIME_TO_DT(GVL_Status.fbLocalTime.systemTime);
+	END_IF		
+	astProductData[1].tProcessTime	:= astProductData[1].dtEndTime - astProductData[1].dtStartTime;
+
+//Remove Total Product Data
+	IF GVL_HMI.bRemoveProductData THEN
+		FOR i := 0 TO cMaxStationNo DO
+			astProductData[i] := astProductData[cMaxStationNo+1];
+		END_FOR;
+		GVL_HMI.bRemoveProductData := FALSE;
+	END_IF
+
+//Data Shift
+	FOR i := 1 TO (cMaxStationNo) DO
+		IF i > 0 AND i <= cMaxStationNo THEN  // 범위 체크 추가
+			IF abMoveShift[i] = TRUE THEN
+				astProductData[i] := astProductData[i-1];
+				astProductData[i-1] := astProductData[cMaxStationNo+1];
+				abMoveShift[i] := FALSE;
+			END_IF
+		END_IF
+	END_FOR;
+	
+	
+
+	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
