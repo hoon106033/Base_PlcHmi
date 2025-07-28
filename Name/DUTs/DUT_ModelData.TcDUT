@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="DUT_ModelData" Id="{954d2aa2-1d03-49e5-9be4-3f2e1bf9e132}">
+    <Declaration><![CDATA[TYPE DUT_ModelData :
+STRUCT
+    sName : STRING; // Model name
+    iNumber : INT;  // Model identifier
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
