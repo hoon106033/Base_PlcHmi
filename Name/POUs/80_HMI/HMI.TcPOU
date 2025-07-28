@@ -18,7 +18,7 @@ END_VAR
 // Select Auto Mode
 	IF GVL_Status.bAutoCmd = FALSE AND GVL_Status.bAutoBusy = FALSE AND GVL_Status.bManualBusy = FALSE AND GVL_Status.bHomeBusy = FALSE  THEN
 		//Turn On Auto Mode 
-		IF GVL_HMI.bBtAutoMode = TRUE AND GVL_Status.bAutoMode = FALSE AND GVL_Status.bSafetyDoorlocked THEN
+        IF GVL_HMI.bBtAutoMode = TRUE AND GVL_Status.bAutoMode = FALSE AND GVL_Status.bSafetyDoorLocked THEN
 			GVL_Status.bAutoMode := TRUE;
 			GVL_HMI.bBtAutoMode := FALSE;
 		END_IF
@@ -31,7 +31,7 @@ END_VAR
 		GVL_HMI.bBtAutoMode := FALSE;
 	END_IF
 		
-	IF GVL_Status.bSafetyDoorUnlocked OR (NOT bDoorUnlockCmd AND NOT bDoorlockCmd)  THEN
+        IF GVL_Status.bSafetyDoorUnlocked OR (NOT bDoorUnlockCmd AND NOT bDoorLockCmd)  THEN
 		GVL_HMI.bBtAutoMode := FALSE;
 	END_IF
 	

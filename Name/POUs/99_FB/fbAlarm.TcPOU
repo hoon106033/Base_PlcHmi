@@ -29,8 +29,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 // Alarm Input
-	balarm	:= bCommand AND bAlarmCondition;
-	tonDelayTimer(in := balarm, pt :=tDelayTime);
+	bAlarm	:= bCommand AND bAlarmCondition;
+	tonDelayTimer(in := bAlarm, pt :=tDelayTime);
 
 // Alarm History
 	triAlarm(clk := tonDelayTimer.Q);
@@ -38,11 +38,11 @@ END_VAR
 		FOR i := cMaxAlarmLogCount TO 1 BY -1 DO
 			astAlarmHistory[i]	:= astAlarmHistory[i-1];
 		END_FOR
-		stalarminfo.iAlarmCode	:= iAlarmCode;
-		stalarminfo.iPriority	:= iPriority;
-		stalarminfo.sAlarmMessage	:= sAlarmMessage;
-		stalarminfo.sLocation	:= sLocation;
-		stalarminfo.tTimeStamp	:= SYSTEMTIME_TO_DT(GVL_Status.fbLocalTime.systemTime);
+		stAlarmInfo.iAlarmCode	:= iAlarmCode;
+		stAlarmInfo.iPriority	:= iPriority;
+		stAlarmInfo.sAlarmMessage	:= sAlarmMessage;
+		stAlarmInfo.sLocation	:= sLocation;
+		stAlarmInfo.tTimeStamp	:= SYSTEMTIME_TO_DT(GVL_Status.fbLocalTime.systemTime);
 		astAlarmHistory[0] := stAlarmInfo;
 	END_IF
 
