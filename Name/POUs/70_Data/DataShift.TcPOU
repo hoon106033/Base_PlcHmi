@@ -5,14 +5,14 @@
 VAR
 	bTestBitStart		:BOOL;
 	bTestBitEnd			:BOOL;	
-	i					:INT; //roop index
+	i					:INT; //loop index
 
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
 // Calculate process time
-	GVL_Status.fbLocalTime(bEnable := TRUE);	// Currnet Time
+	GVL_Status.fbLocalTime(bEnable := TRUE);	// Current Time
 	IF bTestBitStart AND GVL_Status.fbLocalTime.bValid THEN
 		astProductData[1].dtStartTime := SYSTEMTIME_TO_DT(GVL_Status.fbLocalTime.systemTime);
 	END_IF
