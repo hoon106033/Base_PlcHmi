@@ -2627,7 +2627,7 @@
                           </o>
                           <o>
                             <v n="Flags">1L</v>
-                            <v n="BasicTypeNodeValue">"sCurrnetMessage"</v>
+                            <v n="BasicTypeNodeValue">"sCurrentMessage"</v>
                             <v n="BasicTypeNodeAcceptsExpression">true</v>
                             <n n="BasicTypeNodeFastAccess" />
                             <a n="BasicTypeNodeEnumValues" et="String" />
@@ -2698,7 +2698,7 @@
                     </o>
                     <o>
                       <v n="Id">1159861221L</v>
-                      <v n="Value">"sCurrnetMessage"</v>
+                      <v n="Value">"sCurrentMessage"</v>
                     </o>
                     <o>
                       <v n="Id">1013868361L</v>

@@ -6,10 +6,10 @@ VAR_GLOBAL
 	
 	iSelectProductNo	: UINT; // Select Product No.
 	bSaveProductData	: BOOL;
-	bDelectProductData	: BOOL;
+	bDeleteProductData	: BOOL;
 	iSelectRecipeNo		: UINT;
 	bSaveRecipeData		: BOOL;
-	bDelectRecipeData	: BOOL;
+	bDeleteRecipeData	: BOOL;
 	bRemoveProductData	: BOOL;
 	sCurrentTime		: STRING;
 	
@@ -45,7 +45,7 @@ VAR_GLOBAL
 // Message Box
 	
 	sCurrentTitle		: STRING;
-	sCurrnetMessage		: STRING;
+	sCurrentMessage		: STRING;
 	bCallMessageBox		: BOOL;
 
 
