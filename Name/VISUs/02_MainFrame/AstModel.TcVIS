@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Visu Name="AstModel" Id="{9f626ebe-0fb9-4a76-9c05-ae1c7221a00f}">
+    <XmlArchive>
+      <Data>
+        <o xml:space="preserve" t="VisualObject">
+          <n n="LastVisuLanguageModelEntry" />
+          <o n="VisualElemList" t="VisualElemList">
+            <l n="VisualElementList" t="VisualElemCollection" cet="GenericVisualElem" />
+          </o>
+        </o>
+      </Data>
+    </XmlArchive>
+  </Visu>
+</TcPlcObject>

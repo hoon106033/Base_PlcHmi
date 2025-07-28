@@ -6,6 +6,7 @@
 VAR_GLOBAL
 	//Product Data
 	astProductData 		: ARRAY[0..cMaxStationNo+1] OF DUT_ProductData;
+	astModel                : ARRAY[0..9] OF DUT_ModelData; // Model list
 	abMoveShift			: ARRAY[0..cMaxStationNo] OF BOOL;
 	// Alarm
 	astAlarmHistory		: ARRAY[0..cMaxAlarmLogCount-1] OF DUT_AlarmInfo; // 최근 100개 알람 저장
